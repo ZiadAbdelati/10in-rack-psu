@@ -35,7 +35,6 @@ flowchart LR
     C14 --> MW["Mean Well LRS-350-24<br/>24V DC · 14.6A · 350W"]
 
     MW -- "24V DC" --> SW["4CH SW3518 PD Board<br/>4× USB-C / USB-A (100W/ch)"]
-    SW -. "10-Pin 0.5mm FFC<br/>+ F-to-F Board" .-> LCD["Front 1.54-inch IPS Display<br/>V / A / W per Channel"]
 
     MW -- "24V DC" --> BUCK["24V → 12V Buck Converter<br/>20A · 240W"]
     BUCK -- "12V DC" --> PICO["200W 12V→SATA Pico PSU<br/>2× 5-Pin → 8× SATA"]
@@ -58,7 +57,8 @@ flowchart LR
 | **Fused IEC320 C14 Power Inlet** | Panel-mount male C14 socket with illuminated red rocker switch, fuse holder, and pre-wired spade leads | [AliExpress](https://www.aliexpress.com/item/1005008250949486.html) · [Amazon](https://www.amazon.com/clp/B00NWO68JI) |
 | **10-Pin 0.5 mm FFC Extension + Coupler** | 10-pin 0.5 mm pitch FFC/FPC ribbon cable + female-to-female adapter board to extend the SW3518 1.54" display to the front panel | [Amazon](https://www.amazon.com/clp/B07RWF2N1B) · [AliExpress](https://www.aliexpress.com/item/33019478636.html) |
 | **4-Pin PWM Fan Extension Cables (26 cm)** | 4× 26 cm 4-pin PWM extension cables; plug into the front fan controller and friction-fit into rear chassis mounts for external fan pass-through | [AliExpress](https://www.aliexpress.com/item/1005006878304303.html) |
-| **Wiring & Connectors** | Lever wire splice connectors (24 V & 12 V distribution), 5.5 × 2.5 mm right-angle DC barrel plug (12 V → Pico PSU), M3 mounting screws | — |
+| **M3 Heat-Set Inserts & Screws** | Brass M3 heat-set threaded inserts + M3 screws; secures both the backplate and top cover to the main chassis | — |
+| **Wiring & Connectors** | Lever wire splice connectors (24 V & 12 V distribution), 5.5 × 2.5 mm right-angle DC barrel plug (12 V → Pico PSU) | — |
 
 ---
 
@@ -79,6 +79,7 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 **Printing recommendations:**
 - **Material:** PETG, ABS, or ASA (avoid PLA near the LRS-350-24 and 24 V → 12 V buck heatsink).
 - **Build plate:** Minimum `255 × 260 mm` bed size for single-piece printing of the main chassis.
+- **Assembly hardware:** Install M3 heat-set threaded inserts into the main enclosure bosses — both the backplate and the top cover bolt directly into these inserts with M3 screws for easy serviceability.
 
 ---
 
@@ -86,7 +87,7 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 
 > **Mains Voltage Warning:** The Mean Well LRS-350-24 and IEC C14 inlet carry lethal AC mains voltage (115/230 V AC). Ensure proper earth grounding to the LRS-350-24 chassis terminal, use an appropriately rated fuse in the C14 inlet, insulate all AC spade/screw terminals, and never open or touch the internal PSU while plugged in.
 
-- **Mean Well LRS-350-24 Noctua fan swap:** The stock 60 × 15 mm fan (`CCHV CHA6012RM-15D`) in the LRS-350-24 is notoriously loud under load. Replacing it with a **Noctua NF-A6x15 PWM** (60 × 60 × 15 mm, 12 V, max 19.8 dB(A)) dramatically reduces noise while keeping active cooling inside the 1U chassis. Always keep the top cover installed during operation to prevent accidental contact with high-voltage primary-side components.
+- **Mean Well LRS-350-24 cooling & Noctua fan swap:** The stock 60 × 15 mm fan (`CCHV CHA6012RM-15D`) in the LRS-350-24 is notoriously loud under load. An initial fan-delete using an open 3D-printed grille cover on the Mean Well unit was tested (see gallery), but active cooling was kept instead by swapping in a **Noctua NF-A6x15 PWM** (60 × 60 × 15 mm, 12 V, max 19.8 dB(A)), which runs dramatically quieter than the stock fan. Always keep the top cover installed during operation to prevent accidental contact with high-voltage primary-side components.
 - **SW3518 display relocation:** The 4-channel SW3518 PCB is removed from its stock aluminum shell and mounted at the rear so its USB-C/USB-A ports and `K1`–`K3` buttons align with the backplate cutouts. Its 1.54" IPS screen is extended to the front bezel using a 10-pin 0.5 mm pitch FFC cable and a female-to-female coupler board.
 - **Rear PWM fan pass-throughs:** The 4-channel PWM fan controller mounts behind the front panel (for the manual speed knob). Four 26 cm 4-pin PWM fan extension cables run from the controller to dedicated friction-fit sockets printed into the rear of the chassis, letting you plug rack fans directly into the back of the PSU.
 - **Stacked rear modules:** The 200 W SATA Pico PSU mounts above the SW3518 board in the rear-right bay, exposing both 5-pin SATA breakout headers on the backplate.
@@ -100,11 +101,11 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 | :---: | :---: |
 | ![Front panel detail](images/front-panel-detail.jpg) | ![Live display readout](images/front-display-live.jpg) |
 
-| Interior Wiring Layout | Assembled Rear Panel |
+| Mounted in 10" Homelab Rack | Interior Wiring Layout |
 | :---: | :---: |
-| ![Interior layout](images/interior-layout.jpg) | ![Assembled rear panel](images/rear-panel.jpg) |
+| ![Mounted in 10-inch homelab rack](images/rack-mounted.jpg) | ![Interior layout](images/interior-layout.jpg) |
 
-| LRS-350-24 Noctua NF-A6x15 Fan Swap |
+| Early LRS-350-24 Fan-Delete / Open Grille Test *(Later Swapped to Noctua NF-A6x15 PWM)* |
 | :---: |
-| ![PSU Noctua fan swap](images/psu-fan-mod.jpg) |
+| ![Early LRS-350-24 fan-delete open grille test](images/psu-fan-mod.jpg) |
 
