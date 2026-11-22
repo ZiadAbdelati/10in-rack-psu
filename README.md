@@ -35,7 +35,7 @@ flowchart LR
     C14 --> MW["Mean Well LRS-350-24<br/>24V DC · 14.6A · 350W"]
 
     MW -- "24V DC" --> SW["4CH SW3518 PD Board<br/>4× USB-C / USB-A (100W/ch)"]
-    SW -. "10-Pin 0.5mm FFC<br/>+ F-to-F Board" .-> LCD["Front 1.54&quot; IPS Display<br/>V / A / W per Channel"]
+    SW -. "10-Pin 0.5mm FFC<br/>+ F-to-F Board" .-> LCD["Front 1.54-inch IPS Display<br/>V / A / W per Channel"]
 
     MW -- "24V DC" --> BUCK["24V → 12V Buck Converter<br/>20A · 240W"]
     BUCK -- "12V DC" --> PICO["200W 12V→SATA Pico PSU<br/>2× 5-Pin → 8× SATA"]
@@ -50,6 +50,7 @@ flowchart LR
 | Component | Specs / Notes | Link |
 | :--- | :--- | :--- |
 | **Mean Well LRS-350-24** | 350 W, 24 V DC / 14.6 A enclosed switching PSU | [Mean Well Datasheet](https://www.meanwell.com/Upload/PDF/LRS-350/LRS-350-SPEC.PDF) · [Product Page](https://www.meanwell.com/webapp/product/search.aspx?prod=LRS-350) |
+| **Noctua NF-A6x15 PWM** | 60 × 60 × 15 mm, 12 V, 4-pin PWM slim fan (max 19.8 dB(A)); quiet drop-in replacement for the loud stock LRS-350-24 fan | [Noctua Specs](https://www.noctua.at/en/products/nf-a6x15-pwm/specifications) |
 | **400W 4CH SW3518 Fast Charging Module** | 4× SW3518 buck channels (PD 3.0 / QC 4.0), 12–30 V input, 1.54" color IPS display (board harvested from aluminum housing) | [eBay Listing](https://www.ebay.com/itm/388657911500) · [AliExpress Search](https://www.aliexpress.com/w/wholesale-sw3518.html) |
 | **24V → 12V 20A Buck Converter** | YIPIN HEXHA DC 18–35 V to 12 V 20 A (240 W), IP68 potted aluminum heatsink, includes lever splice connectors | [Amazon](https://www.amazon.com/dp/B09541C66X) |
 | **200W HDD/SSD 12V-to-SATA Pico PSU** | DEBROGLIE 12 V DC input, dual 5-pin modular outputs (each breaks out to 4× SATA) + optional USB power-on sync line | [AliExpress](https://www.aliexpress.com/item/1005006503128543.html) |
@@ -85,7 +86,7 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 
 > **Mains Voltage Warning:** The Mean Well LRS-350-24 and IEC C14 inlet carry lethal AC mains voltage (115/230 V AC). Ensure proper earth grounding to the LRS-350-24 chassis terminal, use an appropriately rated fuse in the C14 inlet, insulate all AC spade/screw terminals, and never open or touch the internal PSU while plugged in.
 
-- **Mean Well LRS-350-24 cooling mod:** The stock aluminum cover and noisy 60 mm fan (`CCHV CHA6012RM-15D`) can be removed when relying on the open ventilated top cover and quieter rack airflow — keep the top cover installed during operation to prevent accidental contact with high-voltage primary-side components.
+- **Mean Well LRS-350-24 Noctua fan swap:** The stock 60 × 15 mm fan (`CCHV CHA6012RM-15D`) in the LRS-350-24 is notoriously loud under load. Replacing it with a **Noctua NF-A6x15 PWM** (60 × 60 × 15 mm, 12 V, max 19.8 dB(A)) dramatically reduces noise while keeping active cooling inside the 1U chassis. Always keep the top cover installed during operation to prevent accidental contact with high-voltage primary-side components.
 - **SW3518 display relocation:** The 4-channel SW3518 PCB is removed from its stock aluminum shell and mounted at the rear so its USB-C/USB-A ports and `K1`–`K3` buttons align with the backplate cutouts. Its 1.54" IPS screen is extended to the front bezel using a 10-pin 0.5 mm pitch FFC cable and a female-to-female coupler board.
 - **Rear PWM fan pass-throughs:** The 4-channel PWM fan controller mounts behind the front panel (for the manual speed knob). Four 26 cm 4-pin PWM fan extension cables run from the controller to dedicated friction-fit sockets printed into the rear of the chassis, letting you plug rack fans directly into the back of the PSU.
 - **Stacked rear modules:** The 200 W SATA Pico PSU mounts above the SW3518 board in the rear-right bay, exposing both 5-pin SATA breakout headers on the backplate.
@@ -103,35 +104,7 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 | :---: | :---: |
 | ![Interior layout](images/interior-layout.jpg) | ![Assembled rear panel](images/rear-panel.jpg) |
 
-| LRS-350-24 Cover / Fan Removal | Multi-Device Load Test (Laptop + Steam Deck + Mini PC) |
-| :---: | :---: |
-| ![PSU cover and fan mod](images/psu-fan-mod.jpg) | ![Multi-device load test](images/load-test.jpg) |
+| LRS-350-24 Noctua NF-A6x15 Fan Swap |
+| :---: |
+| ![PSU Noctua fan swap](images/psu-fan-mod.jpg) |
 
----
-
-## Repository Structure
-
-```text
-10in-rack-psu/
-├── README.md
-├── .gitignore
-├── cad/
-│   ├── f3d/
-│   │   ├── backplate.f3d
-│   │   ├── enclosure.f3d
-│   │   └── top-cover.f3d
-│   └── stl/
-│       ├── backplate.stl
-│       ├── enclosure.stl
-│       └── top-cover.stl
-└── images/
-    ├── cad-enclosure-front.png
-    ├── cad-enclosure-rear.png
-    ├── front-display-live.jpg
-    ├── front-panel-detail.jpg
-    ├── hero-front.jpg
-    ├── interior-layout.jpg
-    ├── load-test.jpg
-    ├── psu-fan-mod.jpg
-    └── rear-panel.jpg
-```
