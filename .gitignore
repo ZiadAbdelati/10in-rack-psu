@@ -1,0 +1,8 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# CAD / slicer temp files
+*.bak
+*.tmp
+*.3mf.bak
