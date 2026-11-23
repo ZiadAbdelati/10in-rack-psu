@@ -23,7 +23,7 @@ A custom 3D-printed **10-inch 1U rackmount power supply** built around a **Mean 
 | **Fan Control** | 4× 4-pin PWM 12 V headers (3 A max total), front-panel manual knob |
 | **Enclosure** | 3-piece 3D-printed chassis (`enclosure`, `top-cover`, `backplate`) |
 
-> **Power budget note:** Downstream capacity totals **600 W+** on paper (**400 W** from the 4-channel SW3518 board + **200 W** from the SATA Pico PSU, plus fans), all sharing the **350 W** output budget of the Mean Well LRS-350-24. For this build, 350 W is plenty for typical homelab loads (keep continuous combined draw within ~300 W for thermal headroom). If you need the full 600 W headroom, Mean Well offers the [LRS-600-24](https://www.meanwell.com/Upload/PDF/LRS-600/LRS-600-SPEC.PDF), though it is larger (`225 × 124 × 41 mm` vs. `215 × 115 × 30 mm` for the LRS-350-24) and will require CAD modifications to fit inside a 1U (`44.5 mm`) chassis.
+> **Power budget note:** Downstream capacity can reach a max of **600 W+** on paper (**400 W** from the 4-channel SW3518 board + **200 W** from the SATA Pico PSU, plus fans), all sharing the **350 W** output budget of the Mean Well LRS-350-24. For this build, 350 W is plenty for my needs. If you need the full 600 W headroom, Mean Well offers the [LRS-600-24](https://www.meanwell.com/Upload/PDF/LRS-600/LRS-600-SPEC.PDF), though it is larger (`225 × 124 × 41 mm` vs. `215 × 115 × 30 mm` for the LRS-350-24) and will require slight CAD modifications to fit inside a 1U (`44.5 mm`) chassis.
 
 ---
 
@@ -84,8 +84,6 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 ---
 
 ## Build & Safety Notes
-
-> **Mains Voltage Warning:** The Mean Well LRS-350-24 and IEC C14 inlet carry lethal AC mains voltage (115/230 V AC). Ensure proper earth grounding to the LRS-350-24 chassis terminal, use an appropriately rated fuse in the C14 inlet, insulate all AC spade/screw terminals, and never open or touch the internal PSU while plugged in.
 
 - **Mean Well LRS-350-24 cooling & Noctua fan swap:** The stock 60 × 15 mm fan (`CCHV CHA6012RM-15D`) in the LRS-350-24 is notoriously loud under load. An initial fan-delete using an open 3D-printed grille cover on the Mean Well unit was tested (see gallery), but active cooling was kept instead by swapping in a **Noctua NF-A6x15 PWM** (60 × 60 × 15 mm, 12 V, max 19.8 dB(A)), which runs dramatically quieter than the stock fan. Always keep the top cover installed during operation to prevent accidental contact with high-voltage primary-side components.
 - **SW3518 display relocation:** The 4-channel SW3518 PCB is removed from its stock aluminum shell and mounted at the rear so its USB-C/USB-A ports and `K1`–`K3` buttons align with the backplate cutouts. Its 1.54" IPS screen is extended to the front bezel using a 10-pin 0.5 mm pitch FFC cable and a female-to-female coupler board.
