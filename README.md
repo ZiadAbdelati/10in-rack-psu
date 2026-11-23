@@ -60,6 +60,29 @@ flowchart LR
 | **M3 Heat-Set Inserts & Screws** | Brass M3 heat-set threaded inserts + M3 screws; secures both the backplate and top cover to the main chassis | — |
 | **Wiring & Connectors** | Lever wire splice connectors (24 V & 12 V distribution), 5.5 × 2.5 mm right-angle DC barrel plug (12 V → Pico PSU) | — |
 
+### Hard-to-Find Parts Reference
+
+Since eBay and AliExpress listings rotate frequently, here are screenshots and search keywords for the two most specific modules used in this build:
+
+<table>
+  <tr>
+    <th width="50%">400W 4-Channel SW3518 PD Charger (1.54" Display)</th>
+    <th width="50%">200W 12V-to-SATA HDD/SSD Pico PSU</th>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="images/part-sw3518-4ch.jpg" alt="400W 4-Channel SW3518 fast charging module listing" width="100%">
+      <p>4-channel independent SW3518 buck fast-charging module (12–30 V DC input, up to 100 W PD 3.0 / QC 4.0 per port, 400 W total) with a 1.54" color IPS display. The PCB is harvested out of the stock aluminum shell and mounted at the rear of the chassis, with the screen extended to the front panel via a 10-pin 0.5 mm FFC cable.</p>
+      <p><em>Search terms:</em> <code>400W 4CH SW3518 fast charging module 1.54</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="images/part-sata-pico-psu.jpg" alt="200W 12V DC-to-SATA HDD SSD Pico PSU listing" width="100%">
+      <p>Compact 200 W DC-to-SATA power module (sold under DEBROGLIE and similar brands) that takes 12 V DC input and outputs 12 V / 5 V / 3.3 V across two 5-pin modular headers, each breaking out to 4× SATA power connectors (up to 8 drives total), plus an optional USB power-on sync lead.</p>
+      <p><em>Search terms:</em> <code>200W HDD SSD pico psu 12vDC-SATA 5P-4SATA</code></p>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## 3D-Printed Enclosure (CAD & STLs)
