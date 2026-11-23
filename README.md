@@ -97,9 +97,16 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 
 ## Gallery
 
-| Mounted in 10" Homelab Rack | Build Walkthrough *(click for full MP4)* |
-| :---: | :---: |
-| ![Mounted in 10-inch homelab rack](images/rack-mounted.jpg) | [![Build walkthrough](images/walkthrough.webp)](media/walkthrough.mp4) |
+<table>
+  <tr>
+    <th width="50%">Mounted in 10" Homelab Rack</th>
+    <th width="50%">Build Walkthrough</th>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><img src="images/rack-mounted.jpg" alt="Mounted in 10-inch homelab rack" width="100%"></td>
+    <td width="50%" align="center"><img src="images/walkthrough.webp" alt="Build walkthrough" width="100%"></td>
+  </tr>
+</table>
 
 | Live 1.54" Channel Telemetry | Interior Wiring Layout |
 | :---: | :---: |
