@@ -97,13 +97,13 @@ Both ready-to-slice **STL** meshes and editable **Fusion 360 (`.f3d`)** source f
 
 ## Gallery
 
-| Front Panel & Knob | Live 1.54" Channel Telemetry |
+| Mounted in 10" Homelab Rack | Build Walkthrough *(click for full MP4)* |
 | :---: | :---: |
-| ![Front panel detail](images/front-panel-detail.jpg) | ![Live display readout](images/front-display-live.jpg) |
+| ![Mounted in 10-inch homelab rack](images/rack-mounted.jpg) | [![Build walkthrough](images/walkthrough.webp)](media/walkthrough.mp4) |
 
-| Mounted in 10" Homelab Rack | Interior Wiring Layout |
+| Live 1.54" Channel Telemetry | Interior Wiring Layout |
 | :---: | :---: |
-| ![Mounted in 10-inch homelab rack](images/rack-mounted.jpg) | ![Interior layout](images/interior-layout.jpg) |
+| ![Live display readout](images/front-display-live.jpg) | ![Interior layout](images/interior-layout.jpg) |
 
 | Early LRS-350-24 Fan-Delete / Open Grille Test *(Later Swapped to Noctua NF-A6x15 PWM)* |
 | :---: |
