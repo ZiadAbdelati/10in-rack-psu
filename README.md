@@ -23,7 +23,7 @@ A custom 3D-printed **10-inch 1U rackmount power supply** built around a **Mean 
 | **Fan Control** | 4× 4-pin PWM 12 V headers (3 A max total), front-panel manual knob |
 | **Enclosure** | 3-piece 3D-printed chassis (`enclosure`, `top-cover`, `backplate`) |
 
-> **Power budget note:** All downstream loads share the **350 W** output budget of the Mean Well LRS-350-24. Keep combined simultaneous draw across USB PD, SATA drives, and fans within ~300 W continuous for thermal headroom.
+> **Power budget note:** Downstream capacity totals **600 W+** on paper (**400 W** from the 4-channel SW3518 board + **200 W** from the SATA Pico PSU, plus fans), all sharing the **350 W** output budget of the Mean Well LRS-350-24. For this build, 350 W is plenty for typical homelab loads (keep continuous combined draw within ~300 W for thermal headroom). If you need the full 600 W headroom, Mean Well offers the [LRS-600-24](https://www.meanwell.com/Upload/PDF/LRS-600/LRS-600-SPEC.PDF), though it is larger (`225 × 124 × 41 mm` vs. `215 × 115 × 30 mm` for the LRS-350-24) and will require CAD modifications to fit inside a 1U (`44.5 mm`) chassis.
 
 ---
 
